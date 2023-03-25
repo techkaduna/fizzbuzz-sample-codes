@@ -2,23 +2,36 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
- * Program outputs the first 100 FizzBuzz numbers
- * @i: counter
+ * Program prints FizzBuzz numbers starting
+ * from start in a range of _range
+ * @start: starting number
+ * @_range: range of numbers
  *
- * Return: Always (0) success
+ * Author: Kolawole Andrew
  */
+
 
 int main()
 {
 	// declaring and initializing counter variable
-	int i = 1;
+	int start, _range;
+
+	// reading user input from stdin
+	printf("Enter start number: ");
+	scanf("%i", &start);
+
+	printf("Enter range: ");
+	scanf("%i", &_range);
 
 	//using while loop to check condition continously
-	while (i <= 100)
+	for (int i = start; i <= _range; i++)
 	{
+		//check i
+		if (i % 3 == 0 && i % 5 == 0){
+			printf("FizzBuzz\n");
+		}
 		// check if i is perfectly divisible by 3
-		if (i % 3 == 0)
+		else if (i % 3 == 0)
 		{
 			printf("Fizz\n");
 		} else if(i % 5 == 0)
@@ -29,8 +42,7 @@ int main()
 			// i is not divisible by 3 nor 5
 			printf("%i\n", i);
 		}
-		// increment counter
-		i++;
+		
 	}
 
 	return (0);

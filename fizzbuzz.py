@@ -1,25 +1,34 @@
 '''
-Program outputs the first 100 fizzbuzz numbers
+ * Program prints FizzBuzz numbers starting
+ * from start in a range of _range
+ * @start: starting number
+ * @_range: range of numbers
+ *
+ * Author: Kolawole Andrew
+ '''
 
-Author: Kolawole Andrew
-github: github.com/techkaduna
 
-'''
+# declare counter variables
+start = int(input("Enter start number: "))
+_range = int(input("Enter range: "))
 
-# declare counter variable
-i = 1
+# printing a new line
+print('\n')
 
-# using while loop to check condition continously
-while (i <= 100):
-    #checking if i is divisible by 3 and printing 'fizz'
-    if (i % 3) == 0: # checking if i is perfectly divisible by 3
+# using a for loop with built-in range method
+for i in range(start, (_range+1)):
+    '''range function does will not include 100 by default 
+    hence count+1 was used'''
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
         print("Fizz")
-    elif (i % 5) == 0: # checking if i is perfectly divisible by 5
-        print("Buzz")
-    else: # i is not divisible by 3 nor 5
+    elif i % 5 == 0:
+        print("Buzz") 
+    else:
         print(i)
 
-    # increasing the counter
-    i = i + 1
-
-# Note: We could have used python's in-built range() method
+'''
+ * if you noitced I used a for loop instead of a while loop as in the
+ * tutorial excercise, you can replace the for loop with a while loop BUT DO NOT FORGET TO INCREASE the COUNTER variable
+'''
